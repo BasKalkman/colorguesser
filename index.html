@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spelen</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1>The great <br />
+            <span id="headerColor">RGB</span> <br />
+            guessing game</h1>
+    </div>
+
+    <div class="infobar">
+        <div class="container">
+            <span id="newgame" class="clickable " onclick="setBlockColors()">New game</span>
+            <span id="messageDisplay"></span>
+            <span id="difficulty">
+                <span id="easyDifficulty" class="clickable">easy</span> / 
+                <span id="hardDifficulty" class="clickable selected">hard</span>
+            </span> 
+        </div>
+    </div>
+
+    <div class="game">
+        <div class="colorblock clickable"></div>
+        <div class="colorblock clickable"></div>
+        <div class="colorblock clickable"></div>
+        <div class="colorblock clickable"></div>
+        <div class="colorblock clickable"></div>
+        <div class="colorblock clickable"></div>
+    </div>
+
+
+
+    <script src="javascript.js"></script>
+</body>
+</html>

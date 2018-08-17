@@ -1,0 +1,74 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #232323;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    color: white;
+    background-color: darkblue;
+    margin: 0;
+    text-transform: uppercase;
+    margin: 0 0;
+    text-align: center;
+    padding: 10px;
+    line-height: 1.1;
+    padding: 20px 0; 
+}
+
+#headerColor {
+    font-size: 200%;
+}
+
+.infobar {
+    background-color: white;
+    color: darkblue;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+.infobar .container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+#messageDisplay {
+    font-weight: normal;
+    text-transform: none;
+    color: black;
+    display: inline-block;
+    width: 20%;
+}
+
+.selected {
+    text-decoration: underline;
+}
+
+.game {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #232323; 
+    margin-top: 10px;
+}
+
+.colorblock {
+    width: 30%;
+    padding-bottom: 30%;
+    background-color: red;
+    margin: 1.66%;
+    float: left;
+    border-radius: 5px;
+    transition: background 0.4s;
+}
+
+.hiddenblock {
+    display: none;
+}
