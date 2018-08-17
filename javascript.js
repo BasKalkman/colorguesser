@@ -57,6 +57,7 @@ function setBlockColors() {
     pickedColor = colors[Math.floor(Math.random() * colors.length)];
     document.querySelector(".header").style.backgroundColor = "darkblue"; // Reset to default
     document.querySelector("#messageDisplay").textContent = ""; // reset to default
+    document.getElementById('newgame').textContent = "New game"; // reset to default
     
     // Loop through the blocks
     for (let i = 0; i < blocks.length; i++) {
@@ -81,6 +82,7 @@ function checkChoice() {
         }
         document.querySelector(".header").style.backgroundColor = pickedColor;
         document.getElementById("messageDisplay").textContent = "Correct!";
+        document.getElementById('newgame').textContent = "Play again?";
     } else {
         document.getElementById('messageDisplay').textContent = "Try again";
         this.style.backgroundColor = '#232323';
