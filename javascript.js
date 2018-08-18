@@ -2,7 +2,7 @@
 var colors = [];
 var pickedColor = '';
 const blocks = document.querySelectorAll('.colorblock');
-var difficulty = "hard";
+var difficulty = 6;
 setBlockColors();
 
 // LISTENERS FOR DIFFICULTY SELECTION
@@ -20,12 +20,12 @@ function generateColor() {
 
 function setDifficulty() {
     if (this.id === "easyDifficulty") {
-        difficulty = "easy";
+        difficulty = 3;
         easyDifficulty.classList.add("selected");
         hardDifficulty.classList.remove("selected");
         setBlockColors();
     } else {
-        difficulty = "hard";
+        difficulty = 6;
         easyDifficulty.classList.remove("selected");
         hardDifficulty.classList.add("selected");
         setBlockColors();
@@ -39,20 +39,16 @@ function randColorNum() {
 function populateColorArray(num) {
     colors = [];
     for (let i = 0; i < num; i++) {
-        let color = generateColor();
-        colors.push(color);
+        colors.push(generateColor());
     }
 }
 
 function setBlockColors() {
     // Populate the colors array based on difficulty
-    if (difficulty === 'hard') {
-        blocks.forEach(function(e) {e.classList.remove('hiddenblock')}) // Reset from easy difficulty
-        populateColorArray(6);
-    } else {
-        populateColorArray(3);
-    }
-
+    blocks.forEach(function(e) {e.classList.remove('hiddenblock')}) // Reset from easy difficulty
+    
+    populateColorArray(difficulty);
+    
     // Set target value
     pickedColor = colors[Math.floor(Math.random() * colors.length)];
     document.querySelector(".header").style.backgroundColor = "darkblue"; // Reset to default
@@ -62,10 +58,10 @@ function setBlockColors() {
     // Loop through the blocks
     for (let i = 0; i < blocks.length; i++) {
         // Set colors of blocks, hide if redundant by difficulty
-        if (i >= colors.length) {
-            blocks[i].classList.add('hiddenblock');
-        } else {
+        if (colors[i]) {
             blocks[i].style.backgroundColor = colors[i];
+        } else {
+            blocks[i].classList.add('hiddenblock');
         }
         // Set listeners
         blocks[i].addEventListener('click', checkChoice)
